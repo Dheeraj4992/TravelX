@@ -83,8 +83,8 @@ export default function AddListingPage() {
           </div>
         </div>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <Card>
+        <Card>
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <CardHeader>
               <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="details">Details</TabsTrigger>
@@ -357,8 +357,8 @@ export default function AddListingPage() {
                 <Button className="ml-auto">Publish Listing</Button>
               )}
             </CardFooter>
-          </Card>
-        </Tabs>
+          </Tabs>
+        </Card>
       </div>
     </div>
   )

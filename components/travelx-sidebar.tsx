@@ -96,6 +96,14 @@ export function TravelXSidebar({ userType = "guest", userName = "Guest User", us
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild isActive={isActive("/locations")} tooltip="Locations">
+                  <Link href="/locations">
+                    <MapPin className="mr-2 h-4 w-4" />
+                    <span>Locations</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -259,7 +267,7 @@ export function TravelXSidebar({ userType = "guest", userName = "Guest User", us
           {userType !== "guest" ? (
             <div className="flex items-center gap-4">
               <Avatar>
-                <AvatarImage src={userImage} alt={userName} />
+                <AvatarImage src={userImage || "/placeholder.svg"} alt={userName} />
                 <AvatarFallback>{userName.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="flex flex-col">
@@ -275,7 +283,7 @@ export function TravelXSidebar({ userType = "guest", userName = "Guest User", us
               <Button asChild className="flex-1">
                 <Link href="/login">Login</Link>
               </Button>
-              <Button asChild variant="outline" className="flex-1">
+              <Button asChild variant="outline" className="flex-1 bg-transparent">
                 <Link href="/signup">Sign Up</Link>
               </Button>
             </div>
